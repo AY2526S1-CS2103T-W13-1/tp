@@ -5,8 +5,52 @@ title: User Guide
 
 AddressBook Level 3 (AB3) is a **desktop app for managing contacts, optimized for use via a Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, AB3 can get your contact management tasks done faster than traditional GUI apps.
 
-* Table of Contents
-{:toc}
+## Table of Contents
+
+- [Quick start](#quick-start)
+
+
+- <details markdown = 1><summary><a href="#features">Features</a></summary>
+
+    - <details markdown = 1><summary>👤<a href="#individual-operations">Individual Operations</a></summary>
+      
+      - [Adding a person: `add`](#adding-a-person-add)
+      - [Editing a person : `edit`](#editing-a-person--edit)
+      - [Locating persons: `find`](#locating-persons-find)
+      - [Sorting persons: `sort`](#sorting-persons-sort)
+      - [Deleting a person : `delete`](#deleting-a-person--delete)
+      
+      </details>
+
+    - <details markdown = 1><summary>👥<a href="#group-operations">Group Operations</a></summary>
+      
+      - [Listing all persons : `list`](#listing-all-persons--list)
+      - [Clearing all entries : `clear`](#clearing-all-entries--clear)
+      
+      </details>
+
+    - <details markdown = 1><summary>🛠<a href="#support-functions">Support Functions</a></summary>
+      
+      - [Viewing help : `help`](#viewing-help--help)
+      - [Exiting the program : `exit`](#exiting-the-program--exit)
+      - [Cycling between commands : `UP_Key DOWN_Key`](#cycling-between-commands)
+      - [Autocomplete : `TAB_Key`](#autocomplete)
+      - [Saving the data](#saving-the-data)
+      - [Editing the data file](#editing-the-data-file)
+      - [Archiving data files `[coming in v2.0]`](#archiving-data-files-coming-in-v20)
+      
+      </details>
+    </details>
+
+
+- [FAQ](#faq)
+
+
+- [Known issues](#known-issues)
+
+
+- [Command summary](#command-summary)
+
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -40,7 +84,7 @@ AddressBook Level 3 (AB3) is a **desktop app for managing contacts, optimized fo
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Features
+## Feature
 
 <div markdown="block" class="alert alert-info">
 
@@ -69,14 +113,6 @@ AddressBook Level 3 (AB3) is a **desktop app for managing contacts, optimized fo
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 </div>
 
-### Viewing help : `help`
-
-Shows a message explaining how to access the help page.
-
-![help message](images/helpMessage.png)
-
-Format: `help`
-
 
 ### Adding a person: `add`
 
@@ -92,20 +128,7 @@ Examples:
 * `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01 t/volunteer`
 * `add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/beneficiary`
 
-### Listing all persons : `list`
-
-Shows a list of all persons in the address book.
-
-**Format**:                  
-`list`
-
-**Expected Outcome:**
-* Displays all persons' contact details in the address book.
-* At the panel below the command box, you can see the total number of contacts.
-
-**📘Example**:
-<br>
-![result for 'find alex david'](images/list-success-screenshot.png)
+[Table of Contents](#table-of-contents)
 
 ### Editing a person : `edit`
 
@@ -124,6 +147,8 @@ Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`
 Examples:
 *  `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.
 *  `edit 2 n/Betsy Crower` Edits the name of the 2nd person to be `Betsy Crower`
+
+[Table of Contents](#table-of-contents)
 
 ### Locating persons: `find`
 
@@ -154,6 +179,8 @@ Filters persons whose fields match the keywords.
 * `find n/irfan bernice t/volunteer` returns `Bernice Lee` and `Irfan Ibrahim`, who are both `volunteers` <br>
     ![result for 'find irfan bernice t/volunteer'](images/findIrfanBerniceResult.png)
 
+[Table of Contents](#table-of-contents)
+
 ### Sorting persons: `sort`
 
 Sorts persons by the fields in the order of the parameters
@@ -162,6 +189,8 @@ Format: `sort [n/] [p/] [e/] [a/] [t/]`
 
 * Order of parameters defines the order of sorting.
   e.g. `n/ p/` sorts name then sorts phone number, `p/ n/` sorts phone number then name
+
+[Table of Contents](#table-of-contents)
 
 ### Deleting a person : `delete`
 
@@ -177,11 +206,51 @@ Examples:
 * `list` followed by `delete 2` deletes the 2nd person in the address book.
 * `find Betsy` followed by `delete 1 2` deletes the 1st and 2nd persons in the results of the `find` command.
 
+[Table of Contents](#table-of-contents)
+
+
+### Listing all persons : `list`
+
+Shows a list of all persons in the address book.
+
+**Format**:                  
+`list`
+
+**Expected Outcome:**
+* Displays all persons' contact details in the address book.
+* At the panel below the command box, you can see the total number of contacts.
+
+**📘Example**:
+<br>
+![result for 'find alex david'](images/list-success-screenshot.png)
+
+[Table of Contents](#table-of-contents)
+
 ### Clearing all entries : `clear`
 
 Clears all entries from the address book.
 
 Format: `clear`
+
+[Table of Contents](#table-of-contents)
+
+### Viewing help : `help`
+
+Shows a message explaining how to access the help page.
+
+![help message](images/helpMessage.png)
+
+Format: `help`
+
+[Table of Contents](#table-of-contents)
+
+### Exiting the program : `exit`
+
+Exits the program.
+
+Format: `exit`
+
+[Table of Contents](#table-of-contents)
 
 ### Cycling between commands
 
@@ -191,11 +260,20 @@ Cycles between commands in the command history.
 
 `DOWN Key`: Goes to the next command in history
 
-### Exiting the program : `exit`
+[Table of Contents](#table-of-contents)
 
-Exits the program.
+### Autocomplete
+ 
+CareLink suggests possible complements of your input text. It autocompletes command words, and reminds you of tags of personal information, like `n/` for name.
 
-Format: `exit`
+Format: `tab`: press `tab` to autocomplete with the complement that appears below command box.
+> Pressing **Tab** manages spacing as well, just type as normal!
+
+**📘Example**:
+<br>
+![result for autoComplete](images/autoComplete-success.png)
+
+[Table of Contents](#table-of-contents)
 
 ### Saving the data
 
